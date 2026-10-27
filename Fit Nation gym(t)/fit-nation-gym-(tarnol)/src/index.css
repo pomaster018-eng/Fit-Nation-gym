@@ -1,0 +1,413 @@
+@import "tailwindcss";
+
+/* Aesthetic Beauty CF by Mocha Frappuccino - Applied to selected badges, buttons, and accent sections */
+@font-face {
+  font-family: 'Aesthetic Beauty CF';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: local('Aesthetic Beauty CF'),
+       local('AestheticBeautyCF'),
+       url('/fonts/AestheticBeautyCF.otf') format('opentype'),
+       url('/fonts/Aesthetic%20Beauty%20CF.otf') format('opentype');
+}
+
+/* Belgan Aesthetic by Handpik - Fallback */
+@font-face {
+  font-family: 'Belgan Aesthetic';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: local('Belgan Aesthetic'),
+       local('BelganAesthetic'),
+       url('/fonts/BelganAesthetic.ttf') format('truetype'),
+       url('/fonts/Belgan%20Aesthetic.ttf') format('truetype');
+}
+
+/* Simple Grunge by Rvandtype - Applied to site headlines (other than selected) */
+@font-face {
+  font-family: 'Simple Grunge';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: local('Simple Grunge'),
+       url('/fonts/SimpleGrunge.otf') format('opentype'),
+       url('/fonts/Simple%20Grunge.otf') format('opentype');
+}
+
+/* KG Down Bad Crying At the Gym by Kimberly Geswein - Reserved for Hero H1 & Brand Logo */
+@font-face {
+  font-family: 'KG Down Bad Crying At the Gym';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: local('KG Down Bad Crying At the Gym'),
+       local('KGDownBadCryingAtTheGym'),
+       url('/fonts/KGDownBadCryingAtTheGym.otf') format('opentype'),
+       url('/fonts/KGDownBadCryingAtTheGym.ttf') format('truetype');
+}
+
+/* Gymnastik by Bogstav (Jakob Fischer) - Fallback */
+@font-face {
+  font-family: 'Gymnastik';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: local('Gymnastik'),
+       local('Gymnastik Regular'),
+       url('/fonts/Gymnastik.woff2') format('woff2'),
+       url('/fonts/Gymnastik.woff') format('woff'),
+       url('/fonts/Gymnastik.ttf') format('truetype');
+}
+
+/* Typo Formal by Studio Typo - Applied to whole site (body, paragraphs, buttons, labels) */
+@font-face {
+  font-family: 'Typo Formal';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Typo Formal Regular Demo'),
+       local('Typo Formal'),
+       url('/fonts/TypoFormal-Regular.otf') format('opentype'),
+       url('/fonts/Typo%20Formal%20Regular%20Demo.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Typo Formal';
+  font-style: normal;
+  font-weight: 700 800;
+  font-display: swap;
+  src: local('Typo Formal Bold Demo'),
+       url('/fonts/TypoFormal-Bold.otf') format('opentype'),
+       url('/fonts/Typo%20Formal%20Bold%20Demo.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Typo Formal';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Typo Formal Light Demo'),
+       url('/fonts/TypoFormal-Light.otf') format('opentype'),
+       url('/fonts/Typo%20Formal%20Light%20Demo.otf') format('opentype');
+}
+
+/* Vintage Aesthetic by Erik Studio */
+@font-face {
+  font-family: 'Vintage Aesthetic';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: local('Vintage Aesthetic'),
+       local('VintageAesthetic'),
+       url('/fonts/VintageAesthetic.otf') format('opentype');
+}
+
+@theme {
+  --font-headline: 'Simple Grunge', 'KG Down Bad Crying At the Gym', 'Gymnastik', sans-serif;
+  --font-display: 'Simple Grunge', 'KG Down Bad Crying At the Gym', 'Gymnastik', sans-serif;
+  --font-grunge: 'Simple Grunge', sans-serif;
+  --font-kg: 'KG Down Bad Crying At the Gym', sans-serif;
+  --font-stylish: 'Aesthetic Beauty CF', 'Belgan Aesthetic', 'Syne', sans-serif;
+  --font-aesthetic: 'Aesthetic Beauty CF', serif;
+  --font-belgan: 'Belgan Aesthetic', sans-serif;
+  --font-body: 'Typo Formal', 'Plus Jakarta Sans', sans-serif;
+  --font-vintage: 'Vintage Aesthetic', cursive, sans-serif;
+}
+
+@layer base {
+  :root {
+    --font-headline: 'Simple Grunge', 'KG Down Bad Crying At the Gym', 'Gymnastik', sans-serif;
+    --font-display: 'Simple Grunge', 'KG Down Bad Crying At the Gym', 'Gymnastik', sans-serif;
+    --font-grunge: 'Simple Grunge', sans-serif;
+    --font-kg: 'KG Down Bad Crying At the Gym', sans-serif;
+    --font-stylish: 'Aesthetic Beauty CF', 'Belgan Aesthetic', 'Syne', sans-serif;
+    --font-aesthetic: 'Aesthetic Beauty CF', serif;
+    --font-belgan: 'Belgan Aesthetic', sans-serif;
+    --font-body: 'Typo Formal', 'Plus Jakarta Sans', sans-serif;
+    --bg-black: #0A0A0A;
+    --bg-surface: #141414;
+    --bg-card: #1A1A1A;
+    --accent-yellow: #FFE600;
+    --text-white: #FFFFFF;
+    --text-silver: #D4D4D4;
+    --border-dark: #262626;
+  }
+
+  body {
+    font-family: 'Typo Formal', 'Plus Jakarta Sans', sans-serif;
+    background-color: #0A0A0A;
+    color: #FFFFFF;
+    overflow-x: hidden;
+  }
+
+  /* HEADLINES: Simple Grunge by Rvandtype applied to site headlines */
+  h1, h2, h3, h4, h5, h6, .font-headline, .font-heading, .font-display {
+    font-family: 'Simple Grunge', 'KG Down Bad Crying At the Gym', 'Gymnastik', sans-serif;
+    letter-spacing: 0.03em;
+  }
+}
+
+/* Custom font utilities */
+.font-headline,
+.font-display,
+.font-grunge {
+  font-family: 'Simple Grunge', 'KG Down Bad Crying At the Gym', 'Gymnastik', sans-serif;
+  letter-spacing: 0.03em;
+}
+
+/* Selected elements: KG Down Bad Crying At the Gym */
+.font-kg {
+  font-family: 'KG Down Bad Crying At the Gym', sans-serif !important;
+  letter-spacing: 0.03em;
+}
+
+/* Selected sections & badges: Aesthetic Beauty CF by Mocha Frappuccino */
+.font-stylish,
+.font-aesthetic {
+  font-family: 'Aesthetic Beauty CF', 'Belgan Aesthetic', 'Syne', serif, sans-serif !important;
+  letter-spacing: 0.05em;
+}
+
+.font-body {
+  font-family: 'Typo Formal', 'Plus Jakarta Sans', sans-serif;
+}
+
+.font-vintage,
+.font-vintage-aesthetic {
+  font-family: 'Vintage Aesthetic', cursive, sans-serif;
+}
+
+/* Yellow accent glows and shadows */
+.yellow-glow-subtle {
+  box-shadow: 0 0 25px -4px rgba(255, 230, 0, 0.25);
+}
+
+.yellow-border-glow {
+  border-color: rgba(255, 230, 0, 0.6);
+  box-shadow: 0 0 15px -2px rgba(255, 230, 0, 0.3);
+}
+
+/* Smooth transitions */
+.transition-card {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+/* ========================================================
+   LIGHT THEME ADAPTATION
+   Transforms the website into a clean, bright, premium light aesthetic:
+   - Primary BG: #FFFFFF
+   - Secondary BG: #F7F8F5
+   - Cards: #FFFFFF with crisp subtle borders & soft shadows
+   - Headlines: Gymnastik by bogstav in deep charcoal #181818
+   - Secondary Text: #555555 / #666666
+   - Accents: Vibrant #FFE600 with black contrast
+   ======================================================== */
+
+html.light {
+  color-scheme: light;
+}
+
+html.light body,
+html.light #root,
+html.light .bg-\[\#0A0A0A\],
+html.light .bg-\[\#070707\],
+html.light .bg-\[\#0D0D0D\],
+html.light .bg-\[\#0E0E0E\],
+html.light .bg-\[\#0F0F0F\],
+html.light .bg-black {
+  background-color: #FFFFFF !important;
+  color: #181818 !important;
+}
+
+/* Surfaces and section backgrounds in light mode */
+html.light .bg-\[\#141414\],
+html.light .bg-\[\#111111\],
+html.light .bg-\[\#121212\],
+html.light .bg-\[\#151515\],
+html.light .bg-\[\#161616\],
+html.light .bg-\[\#181818\],
+html.light .bg-\[\#1A1A1A\],
+html.light .bg-\[\#1C1C1C\],
+html.light .bg-\[\#1E1E1E\],
+html.light .bg-\[\#1F1F1F\],
+html.light .bg-\[\#202020\],
+html.light .bg-\[\#222222\],
+html.light .bg-\[\#242424\],
+html.light .bg-\[\#262626\],
+html.light .bg-\[\#282828\] {
+  background-color: #F7F8F5 !important;
+}
+
+/* Specific elevated cards in light mode */
+html.light .rounded-2xl.bg-\[\#141414\],
+html.light .rounded-xl.bg-\[\#141414\],
+html.light .rounded-3xl.bg-\[\#141414\],
+html.light .rounded-2xl.bg-\[\#121212\],
+html.light .rounded-xl.bg-\[\#121212\],
+html.light .rounded-2xl.bg-\[\#181818\],
+html.light .rounded-xl.bg-\[\#181818\],
+html.light .rounded-2xl.bg-\[\#161616\],
+html.light .rounded-xl.bg-\[\#161616\],
+html.light .p-6.bg-\[\#141414\],
+html.light .p-8.bg-\[\#141414\],
+html.light .p-7.bg-\[\#141414\],
+html.light .p-5.bg-\[\#141414\],
+html.light .p-8.sm\:p-12.bg-\[\#141414\] {
+  background-color: #FFFFFF !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Sticky Header in light mode */
+html.light header {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-bottom-color: #E6E8E2 !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+/* Mobile Navigation Drawer in light mode */
+html.light .fixed.top-20.right-0.bottom-0 {
+  background-color: #FFFFFF !important;
+  border-left-color: #E6E8E2 !important;
+  box-shadow: -8px 0 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Mobile Sticky Bottom Bar in light mode */
+html.light .fixed.bottom-0.left-0.right-0 {
+  background-color: rgba(255, 255, 255, 0.96) !important;
+  border-top-color: #E6E8E2 !important;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.06);
+}
+
+html.light .fixed.bottom-0.left-0.right-0 a.bg-\[\#1C1C1C\] {
+  background-color: #F7F8F5 !important;
+  color: #181818 !important;
+  border-color: #E6E8E2 !important;
+}
+
+/* Typography in light mode */
+html.light .text-white,
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light h5,
+html.light h6 {
+  color: #181818 !important;
+}
+
+html.light .text-neutral-300,
+html.light .text-neutral-400,
+html.light .text-neutral-500,
+html.light .text-silver,
+html.light .text-\[\#D4D4D4\],
+html.light .text-\[\#B8B8B8\] {
+  color: #555555 !important;
+}
+
+/* Nav links in light mode */
+html.light nav button.text-neutral-300,
+html.light nav button {
+  color: #4B5563 !important;
+}
+html.light nav button.text-white,
+html.light nav button:hover {
+  color: #181818 !important;
+}
+
+/* Light mode borders */
+html.light .border-\[\#222222\],
+html.light .border-\[\#242424\],
+html.light .border-\[\#262626\],
+html.light .border-\[\#282828\],
+html.light .border-\[\#2B2B2B\],
+html.light .border-\[\#2E2E2E\],
+html.light .border-\[\#333333\] {
+  border-color: #E6E8E2 !important;
+}
+
+html.light .border-t,
+html.light .border-b,
+html.light .border-l,
+html.light .border-r {
+  border-color: #E6E8E2;
+}
+
+/* Secondary Buttons in light mode */
+html.light a.bg-\[\#141414\],
+html.light button.bg-\[\#141414\],
+html.light a.bg-\[\#1A1A1A\],
+html.light button.bg-\[\#1A1A1A\],
+html.light a.bg-\[\#181818\],
+html.light button.bg-\[\#181818\] {
+  background-color: #FFFFFF !important;
+  color: #181818 !important;
+  border-color: #D1D5DB !important;
+}
+html.light a.bg-\[\#141414\]:hover,
+html.light button.bg-\[\#141414\]:hover {
+  background-color: #F9FAFB !important;
+  border-color: #FFE600 !important;
+  color: #000000 !important;
+}
+
+/* Primary yellow buttons retain high contrast */
+html.light .bg-\[\#FFE600\] {
+  background-color: #FFE600 !important;
+  color: #000000 !important;
+}
+
+/* Inputs and textareas */
+html.light input,
+html.light textarea,
+html.light select {
+  background-color: #FFFFFF !important;
+  color: #181818 !important;
+  border-color: #D1D5DB !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #8E95A5 !important;
+}
+
+/* Reset inverted Google Maps iframe in light mode */
+html.light iframe {
+  filter: none !important;
+}
+
+/* Modals and Dialogs in light mode */
+html.light .fixed.inset-0 .bg-\[\#141414\],
+html.light .fixed.inset-0 .bg-\[\#151515\],
+html.light .fixed.inset-0 .bg-\[\#161616\] {
+  background-color: #FFFFFF !important;
+  color: #181818 !important;
+  border-color: #E6E8E2 !important;
+}
+
+html.light .fixed.inset-0 .bg-\[\#1C1C1C\],
+html.light .fixed.inset-0 .bg-\[\#181818\],
+html.light .fixed.inset-0 .bg-\[\#202020\],
+html.light .fixed.inset-0 .bg-\[\#222222\] {
+  background-color: #F7F8F5 !important;
+  border-color: #E6E8E2 !important;
+}
+
+/* Inline code tags in light mode */
+html.light code {
+  background-color: #EEF0E9 !important;
+  color: #181818 !important;
+  border-color: #D1D5DB !important;
+}
+
+/* Gradient text on hero headline */
+html.light .from-white.via-white.to-\[\#FFE600\] {
+  background-image: linear-gradient(to right, #181818, #181818, #A68E00) !important;
+}
+
+/* Brand logo title in light mode */
+html.light .text-white.group-hover\:text-\[\#FFE600\] {
+  color: #181818 !important;
+}
+
+
